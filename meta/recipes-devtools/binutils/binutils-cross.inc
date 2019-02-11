@@ -17,6 +17,7 @@ SRC_URI += "file://0002-binutils-cross-Do-not-generate-linker-script-directo.pat
 EXTRA_OECONF += "--with-sysroot=${STAGING_DIR_TARGET} \
                 --disable-install-libbfd \
                 --enable-poison-system-directories \
+                --disable-werror \
                 --with-lib-path==${target_base_libdir}:=${target_libdir} \
                 "
 do_install () {

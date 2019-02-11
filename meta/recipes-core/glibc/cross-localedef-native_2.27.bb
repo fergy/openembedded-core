@@ -44,8 +44,8 @@ SRCREV_FORMAT = "glibc_localedef"
 S = "${WORKDIR}/git"
 
 EXTRA_OECONF = "--with-glibc=${S}"
-CFLAGS += "-fgnu89-inline -std=gnu99 -DIS_IN\(x\)='0'"
-
+CFLAGS += "-fgnu89-inline -std=gnu99 -DIS_IN\(x\)='0' \
+           -D_IO_fwide=fwide"
 do_install() {
 	install -d ${D}${bindir}
 	install -m 0755 ${B}/localedef ${D}${bindir}/cross-localedef
